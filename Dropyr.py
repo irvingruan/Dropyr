@@ -13,17 +13,23 @@
 # OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Dropyr examines and displays the top-down view of your Dropbox directory in friendly ASCII art.
-# To run, simply type: ./Dropyr.py /path/to/Dropbox/directory
+# To run, simply type: ./Dropyr.py
 
 import os
 import sys
 
+def find_dropbox_directory():
+	homePath = os.path.expanduser("~/")
+
+	for root, subFolders, files in os.walk(homePath):
+	    for sf in subFolders:
+			if sf.lower() == "dropbox":
+				return os.path.join(root, sf)
+				
+	sys.stdout.write("Cannot find Dropbox directory!\n")
+			
 def usage():
-	sys.stderr.write("Error: arguments\n")
-	sys.stderr.write("Usage: ./Dropyr.py /path/to/Dropbox/folder")
-	
-def invalid_dropbox_path(path):
-	sys.stderr.write("Invalid Dropbox directory path: \"" + path + "\"\n")
+	sys.stderr.write("Usage: ./Dropyr.py\n")
 
 def generate_dropbox_tree(dir, padding, displayFilesFlag):
     sys.stdout.write(padding[:-1] + '+-' + os.path.basename(os.path.abspath(dir)) + '/\n')
@@ -49,15 +55,10 @@ def generate_dropbox_tree(dir, padding, displayFilesFlag):
 
 if __name__ == "__main__":
 	
-	if len(sys.argv) > 2 or len(sys.argv) <= 1:
+	if len(sys.argv) != 1:
 		usage()
-		
-	if not(os.path.isdir(sys.argv[1])):
-		invalid_dropbox_path(sys.argv[1])
-	
-	sys.stdout.write("Examining Dropbox directory path...\n")
-	
-	dropboxRootDir = sys.argv[1]	
+
+	dropboxRootDir = find_dropbox_directory()
 	generate_dropbox_tree(dropboxRootDir, "\t", True)
 	
 	

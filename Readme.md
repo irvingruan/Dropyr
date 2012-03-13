@@ -18,7 +18,7 @@ Usage
 
 Simply run:
 
-`./Dropyr.py /path/to/Dropbox/directory`
+`./Dropyr.py`
 
 Legal
 -----
