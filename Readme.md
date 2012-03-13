@@ -11,7 +11,7 @@ About
 
 Dropyr is a simple Python utility that generates a top-down view of your Dropbox directory and constituent folders and files in a friendly ASCII view.
 
-Dropyr currently only runs on *nix systems.
+Dropyr currently only runs on *nix systems and requires Python 2.x or higher.
 
 Usage
 -----
@@ -19,6 +19,8 @@ Usage
 Simply run:
 
 `./Dropyr.py`
+
+And Dropyr will take care of the rest by finding your Dropbox root directory and displaying its tree structure in ASCII.
 
 Legal
 -----
