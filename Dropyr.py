@@ -52,14 +52,15 @@ def generate_dropbox_tree(dir, padding, displayFilesFlag):
         else:
             sys.stdout.write(padding + '+-' + file + '\n')
 
-
-if __name__ == "__main__":
-	
+def main():
 	if len(sys.argv) != 1:
 		usage()
 
 	dropboxRootDir = find_dropbox_directory()
-	generate_dropbox_tree(dropboxRootDir, "\t", True)
+	generate_dropbox_tree(dropboxRootDir, "\t", True)	
+
+if __name__ == "__main__":
+	main()
 	
 	
 		
