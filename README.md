@@ -4,7 +4,7 @@ Dropyr
 An ASCII visualizer of your Dropbox directory
 =========================================
 
-Author: Irving Ruan, [irvingruan@gmail.com](mailto:irvingruan@gmail.com)
+Author: Irving Ruan <[irvingruan@gmail.com](mailto:irvingruan@gmail.com)>
 
 ![Sample Output](http://i.imgur.com/NRPgM.png)
 
