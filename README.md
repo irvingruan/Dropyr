@@ -27,4 +27,4 @@ And Dropyr will take care of the rest by finding your Dropbox root directory and
 Legal
 -----
 
-Dropyr is Copyright (c) 2012 Irving Ruan and is MIT licensed. The full disclaimer and text of the license can be found in LICENSE.
+Dropyr is Copyright (c) 2012 Irving Ruan and is BSD licensed. The full disclaimer and text of the license can be found in LICENSE.
