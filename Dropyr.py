@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
-# Author: Irving Ruan <irvingruan@gmail.com>
-
-# Dropyr examines and displays the top-down view of your Dropbox directory in       # friendly ASCII art.
+# Written by Irving Y. Ruan <irvingruan@gmail.com>
+# All rights reserved.
 
 # See README for instructions on how to use Dropyr
 
