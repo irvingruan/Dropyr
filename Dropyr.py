@@ -9,17 +9,17 @@ import os
 import sys
 
 def find_dropbox_directory():
-	homePath = os.path.expanduser("~/")
+    homePath = os.path.expanduser("~/")
 
-	for root, subFolders, files in os.walk(homePath):
-	    for sf in subFolders:
-			if sf.lower() == "dropbox":
-				return os.path.join(root, sf)
-				
-	sys.stdout.write("Cannot find Dropbox directory!\n")
-			
+    for root, subFolders, files in os.walk(homePath):
+        for sf in subFolders:
+            if sf.lower() == "dropbox":
+                return os.path.join(root, sf)
+
+    sys.stdout.write("Cannot find Dropbox directory!\n")
+
 def usage():
-	sys.stderr.write("Usage: ./Dropyr.py\n")
+    sys.stderr.write("Usage: ./Dropyr.py\n")
 
 def generate_dropbox_tree(dir, padding, displayFilesFlag):
     sys.stdout.write(padding[:-1] + '+-' + os.path.basename(os.path.abspath(dir)) + '/\n')
@@ -43,20 +43,11 @@ def generate_dropbox_tree(dir, padding, displayFilesFlag):
             sys.stdout.write(padding + '+-' + file + '\n')
 
 def main():
-	if len(sys.argv) != 1:
-		usage()
+    if len(sys.argv) != 1:
+        usage()
 
-	dropboxRootDir = find_dropbox_directory()
-	generate_dropbox_tree(dropboxRootDir, "\t", True)	
+    dropboxRootDir = find_dropbox_directory()
+    generate_dropbox_tree(dropboxRootDir, "\t", True)
 
 if __name__ == "__main__":
-	main()
-	
-	
-		
-	
-	
-		
-	
-	
-	
+    main()
